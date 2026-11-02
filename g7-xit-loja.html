@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="G7 XIT — loja digital de guias de sensibilidade e HUD.">
+<title>G7 XIT — Loja Digital</title>
+<style>
+:root{--bg:#090909;--panel:#151515;--panel2:#1d1d1d;--red:#ef3038;--red2:#a80f19;--text:#f7f7f7;--muted:#aaa;--line:#343434}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#4a0b11 0,transparent 48%),linear-gradient(180deg,#090909,#101010 60%,#080808);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0b0b0bf2;border-bottom:1px solid #4b171a;backdrop-filter:blur(12px)}
+.wrap{max-width:1050px;margin:auto;padding:16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:950;font-size:1.35rem;letter-spacing:.5px}.brand b{color:var(--red)}button,.btn{border:0;border-radius:12px;background:var(--red);color:white;padding:12px 15px;font-weight:800;cursor:pointer;font-size:.95rem}button:hover,.btn:hover{filter:brightness(1.1)}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#292929;border:1px solid #444}.hero{padding:38px 0 30px;position:relative}.hero-box{border:1px solid #522027;border-radius:24px;padding:clamp(22px,5vw,42px);background:linear-gradient(120deg,#1b0b0d 0%,#111 58%,#19090b 100%);box-shadow:0 18px 55px #0008,inset 0 0 35px #7f1d1d12;position:relative;overflow:hidden}.hero-box:after{content:"☠";position:absolute;right:18px;bottom:-40px;font-size:clamp(7rem,23vw,13rem);color:#ff343411;pointer-events:none}.hero h1,.hero p,.hero .eyebrow{position:relative;z-index:1}.hero .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #54242a;background:#280e12;color:#ff9da2;border-radius:999px;padding:7px 11px;font-size:.78rem;font-weight:800;margin-top:18px}.eyebrow{color:#ff7379;font-weight:900;font-size:.8rem;letter-spacing:2px}.hero h1{font-size:clamp(2rem,7vw,3.5rem);line-height:1.02;margin:8px 0 12px}.hero p{color:#c8c8c8;max-width:650px;margin:0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:20px 0}.section-title h2{margin:0}.muted{color:var(--muted);font-size:.9rem}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:linear-gradient(155deg,#1c1c1c,#101010);border:1px solid #353535;border-radius:18px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;overflow:hidden;display:flex;flex-direction:column}.card:hover{transform:translateY(-3px);border-color:#8f2830;box-shadow:0 12px 30px #0008}.art{height:150px;display:grid;place-items:center;background:radial-gradient(circle at 50% 20%,#6e171d,#1c090b 70%);border-bottom:1px solid #4b1a1d}.art span{font-size:2.7rem;filter:drop-shadow(0 0 18px #f22)}.card-body{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}.card h3{margin:0}.price{font-size:1.5rem;font-weight:950;color:#ff6268}.card p{margin:0;color:#bdbdbd;font-size:.9rem;flex:1}.qty{display:flex;align-items:center;gap:10px}.qty button{padding:7px 12px;background:#303030}.qty span{min-width:18px;text-align:center;font-weight:800}.layout{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin:24px 0 40px}.panel{background:linear-gradient(160deg,#171717,#101010);border:1px solid #383838;border-radius:20px;padding:20px;box-shadow:0 12px 35px #0005}.panel h2,.panel h3{margin-top:0}.cart-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #2b2b2b}.cart-row:last-child{border-bottom:0}.cart-name{font-weight:750}.cart-sub{color:var(--muted);font-size:.86rem}.total{display:flex;justify-content:space-between;align-items:center;font-size:1.1rem;font-weight:900;margin:16px 0}.total strong{font-size:1.5rem;color:#ff6268}.empty{color:var(--muted);padding:16px 0}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}.field label{font-size:.9rem;color:#ddd}.field input,.field select{width:100%;border:1px solid #414141;background:#090909;color:white;border-radius:10px;padding:12px;font:inherit}.notice{background:#281316;border:1px solid #6b2429;border-radius:12px;padding:12px;color:#ffd9db;font-size:.88rem;margin-top:12px}.success{display:none;background:#102519;border:1px solid #286c42;border-radius:12px;padding:14px;margin-top:12px;overflow-wrap:anywhere}.success.show{display:block}.footer{color:#888;border-top:1px solid #292929;padding:22px 0 34px;font-size:.85rem}
+@media(max-width:720px){.layout{grid-template-columns:1fr}.wrap{padding:14px}.hero{padding-top:26px}.nav .btn{padding:10px 12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand">G7 <b>XIT</b></div><button class="secondary" onclick="document.getElementById('carrinho').scrollIntoView({behavior:'smooth'})">🛒 Carrinho (<span id="cartCount">0</span>)</button></div></header>
+<main class="wrap">
+<section class="hero"><div class="hero-box"><div class="eyebrow">☠ G7 XIT • LOJA DIGITAL</div><h1>Seu estilo.<br><span style="color:#ff4d55">Sua configuração.</span></h1><p>Guias digitais de sensibilidade e HUD para você consultar e adaptar ao seu jeito de jogar. Escolha seu produto, confira o total e finalize o pedido.</p><div class="pill">🔴 PIX DIRETO • ENTREGA MANUAL APÓS CONFIRMAÇÃO</div></div></section>
+<div class="section-title"><h2>Escolha seu produto</h2><span class="muted">Sensibilidade • HUD • Combos</span></div>
+<section class="products" id="products"></section>
+<section class="layout">
+<div class="panel" id="carrinho"><h2>🛒 Seu carrinho</h2><div id="cartItems" class="empty">Seu carrinho está vazio.</div><div class="total"><span>Total</span><strong id="total">R$ 0,00</strong></div><button style="width:100%" id="checkoutBtn" onclick="goCheckout()" disabled>Continuar para pagamento</button><p class="muted">O total é calculado automaticamente conforme os itens e quantidades.</p></div>
+<div class="panel" id="checkout"><h2>🔒 Finalizar pedido</h2><p class="muted">Preencha seus dados e confira as instruções do Pix.</p>
+<form id="orderForm">
+<div class="field"><label for="customer">Seu nome</label><input id="customer" name="customer" autocomplete="name" required placeholder="Nome do comprador"></div>
+<div class="field"><label for="email">E-mail para receber a confirmação</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></div>
+<input type="hidden" id="payment" value="Pix">
+<button type="submit" style="width:100%">Gerar instruções do Pix</button>
+</form>
+<div class="success" id="orderResult" aria-live="polite"></div>
+<div class="notice"><strong>Pix manual:</strong><br>Chave Pix (e-mail): <strong id="pixKey">jeffersonsilvaalve@gmail.com</strong><br><button type="button" class="secondary" style="margin-top:9px" onclick="copyPix()">Copiar chave Pix</button><br><br>Depois de pagar, fale com o suporte pelo WhatsApp ou e-mail e informe o número do pedido. A entrega é confirmada manualmente pelo vendedor. Esta página não detecta o Pix automaticamente; só marque como pago depois de conferir o recebimento na sua conta.</div><div class="notice"><strong>Suporte:</strong><br><a style="color:#ff7379" href="https://wa.me/5563423539305" target="_blank" rel="noopener">Falar com suporte no WhatsApp</a><br><a style="color:#ff7379" href="mailto:jeffersonsilvaalve@gmail.com">Enviar e-mail</a><br><br>Se houver problema com a entrega, entre em contato para resolver ou combinar o reembolso.</div>
+</div>
+</section>
+<footer class="footer"><strong style="color:#ddd">G7 XIT</strong> • Produtos digitais de sensibilidade e HUD.<br>Pagamento por Pix direto ao vendedor. O pedido só é considerado pago após conferência do recebimento real. Se tiver algum problema com a entrega, use os canais de suporte acima.</footer>
+</main>
+<script>
+const products = [
+ {id:'digital-1',name:'Sensibilidade HS',price:4.99,description:'Guia em imagens com sugestões de sensibilidade para você ajustar no jogo.'},
+ {id:'digital-2',name:'HUD Personalizado',price:35,description:'Referência visual de HUD e posicionamento de botões para adaptar ao seu estilo.'},
+ {id:'digital-3',name:'Combo Sensibilidade + HUD',price:50,description:'Pacote digital com imagens de referência de sensibilidade e HUD.'}
+];
+const cart = {};
+const money = n => n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function renderProducts(){
+ document.getElementById('products').innerHTML = products.map(p=>`
+ <article class="card"><div class="art"><span>☠️</span></div><div class="card-body">
+ <h3>${p.name}</h3><div class="price">${money(p.price)}</div><p>${p.description}</p>
+ <button onclick="add('${p.id}')">Adicionar ao carrinho</button></div></article>`).join('');
+}
+function add(id){cart[id]=(cart[id]||0)+1;renderCart()}
+function copyPix(){navigator.clipboard.writeText('jeffersonsilvaalve@gmail.com').then(()=>alert('Chave Pix copiada!')).catch(()=>alert('Copie a chave Pix: jeffersonsilvaalve@gmail.com'))}
+function change(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function getCount(){return Object.values(cart).reduce((a,b)=>a+b,0)}
+function getTotal(){return products.reduce((sum,p)=>sum+p.price*(cart[p.id]||0),0)}
+function renderCart(){
+ const entries=products.filter(p=>cart[p.id]);
+ document.getElementById('cartCount').textContent=getCount();
+ document.getElementById('total').textContent=money(getTotal());
+ document.getElementById('checkoutBtn').disabled=!entries.length;
+ document.getElementById('cartItems').innerHTML=entries.length?entries.map(p=>`
+ <div class="cart-row"><div><div class="cart-name">${p.name}</div><div class="cart-sub">${money(p.price)} cada • Subtotal: ${money(p.price*cart[p.id])}</div></div>
+ <div class="qty"><button type="button" aria-label="Diminuir" onclick="change('${p.id}',-1)">−</button><span>${cart[p.id]}</span><button type="button" aria-label="Aumentar" onclick="change('${p.id}',1)">+</button></div></div>`).join(''):'<div class="empty">Seu carrinho está vazio.</div>';
+ document.getElementById('orderResult').classList.remove('show');
+}
+function goCheckout(){document.getElementById('checkout').scrollIntoView({behavior:'smooth'})}
+document.getElementById('orderForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ if(!getCount()){alert('Adicione pelo menos um produto ao carrinho.');return}
+ const orderId='G7-'+Math.random().toString(36).slice(2,8).toUpperCase();
+ const customer=document.getElementById('customer').value.trim();
+ const email=document.getElementById('email').value.trim();
+ const orderLines=products.filter(p=>cart[p.id]).map(p=>`${cart[p.id]} x ${p.name} — ${money(p.price*cart[p.id])}`);
+ const lines=orderLines.join('<br>');
+ const total=money(getTotal());
+ const whatsappText=`Olá! Quero confirmar meu pedido na G7 XIT.
+Pedido: ${orderId}
+Nome: ${customer}
+E-mail: ${email}
+Itens: ${orderLines.join('; ')}
+Total: ${total}
+Já fiz o Pix e vou enviar o comprovante aqui. Por favor, confira o recebimento e me informe a entrega.`;
+ const result=document.getElementById('orderResult');
+ result.innerHTML=`<strong>Pedido criado: ${orderId}</strong><br><br>${lines}<br><br><strong>Total: ${total}</strong><br><br><strong>1. Faça o Pix para:</strong> <span id="orderPixKey">jeffersonsilvaalve@gmail.com</span><br><button type="button" class="secondary" style="margin-top:8px" onclick="copyPix()">Copiar chave Pix</button><br><br><strong>2. Depois do pagamento, envie o comprovante:</strong><br><a style="display:inline-block;margin-top:8px;color:#fff;background:#b91c1c;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:800" href="https://wa.me/5563423539305?text=${encodeURIComponent(whatsappText)}" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a><br><a style="display:inline-block;margin-top:8px;color:#fff;background:#292929;border:1px solid #444;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:800" href="mailto:jeffersonsilvaalve@gmail.com?subject=${encodeURIComponent(`Pedido ${orderId} — G7 XIT`)}&body=${encodeURIComponent(whatsappText)}">Enviar detalhes por e-mail</a><br><br>Seu número de pedido é <strong>${orderId}</strong>. Guarde esse código. O vendedor vai conferir se o Pix caiu e então enviar o link do produto pelo privado/WhatsApp.<br><br><em>Importante: esta versão não detecta o pagamento sozinha e não libera o produto automaticamente. Não confie apenas no comprovante: a entrega acontece após conferir o recebimento real. Nunca envie senha ou códigos bancários.</em>`;
+ result.classList.add('show');
+});
+renderProducts();renderCart();
+</script>
+</body>
+</html>
